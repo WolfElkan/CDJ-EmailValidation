@@ -21,6 +21,14 @@
 				<input type="submit">
 			</form>
 		</div>
-		{{emails}}
+		<u><b>Email Addresses Entered:</b></u>
+		<table>
+		{% for email in emails %}
+			<tr>
+				<td>{{email.email}}</td>
+				<td>{{email.created_atgit}}</td>
+			</tr>
+		{% endfor %}
+		</table>
 	</body>
 </html>
