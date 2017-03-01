@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Email Validation</title>
+		{% load staticfiles %}
+		<script src="{% static 'main/js/script.js' %}" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+	</head>
+	<body>
+		<div class="redbox" style="display: {{redbox}}">
+			{% for error in errors %}
+			<span style="display: block;">{{error}}</span>
+			{% endfor %}
+		</div>
+		<div>
+			<form method="post">
+				{% csrf_token %}	
+				Email:
+				<input type="text" name="email">
+				<input type="submit">
+			</form>
+		</div>
+		{{emails}}
+	</body>
+</html>
